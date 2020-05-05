@@ -1,0 +1,10 @@
+<h5>Your tasks list:</h5><br>
+
+<ol>
+    <li *ngFor="let position  of positions">{{position.action}} ({{position.comment}}) <button
+            (click)="removeTask(position)" class="btn btn-outline-dark btn-sm">X</button><button
+            (click)="editTask(position)" class="btn btn-outline-dark btn-sm" style="margin-left: 10px">Edit
+            task</button></li>
+</ol>
+
+<router-outlet></router-outlet>

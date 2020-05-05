@@ -1,0 +1,9 @@
+input{
+    margin-right: 10px;
+    height: 28px;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+}

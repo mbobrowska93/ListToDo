@@ -1,0 +1,18 @@
+<h5>Add new task and comment for it!</h5><br>
+<form [formGroup]="registerForm">
+    <input type="text" [(ngModel)]="task.action" placeholder="Write action" formControlName="action"
+        [ngClass]="{'is-invalid': submitted && f.action.errors}" autofocus>
+    <div *ngIf="submitted && f.action.errors">
+        <div *ngIf="f.action.errors.required" class="error">To pole jest wymagane!</div>
+    </div><br><br>
+
+    <span><input type="text" [(ngModel)]="task.comment" placeholder="Write comment" formControlName="comment"
+        [ngClass]="{'is-invalid': submitted && f.comment.errors}"></span>
+    <div *ngIf="submitted && f.comment.errors">
+        <div *ngIf="f.comment.errors.required" class="error">To pole jest wymagane!</div>
+    </div><br><br>
+
+    <button (click)='addTask()' class="btn btn-dark btn-sm">Add task</button>
+</form>
+
+<router-outlet></router-outlet>
