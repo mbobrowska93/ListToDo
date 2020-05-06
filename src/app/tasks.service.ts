@@ -6,26 +6,31 @@ import { Task } from './task';
 })
 export class TasksService {
 
-  private task: Task[] = [];
+  private item: Task[] = [];
+  private editItem: Task[] = [];
 
   constructor() { }
 
   writeOnTheList(e: string, f: string) {
     // dostajemy zadanie i komentarz w postaci stringow, i w tej metodce musimy do niej stworyc obiekt i mu te parametry dac
     console.log(e, f);
-    const item: Task = new Task(e, f); // przekazanie nazwy dla obiektu Task
-    this.task.push(item);
+    const newItem: Task = new Task(e, f); // przekazanie nazwy dla obiektu Task
+    this.item.push(newItem);
   }
 
   getData(): Task[] {
-    return this.task;
+    return this.item;
   }
 
   remove(e: Task) {
-    this.task = this.task.filter(x => x.action !== e.action);
+    this.item = this.item.filter(x => x.action !== e.action);
   }
 
-  edit(e: Task) {
+  edit(y: Task) {
+    this.editItem.push(y);
+  }
 
+  getEditItem(): Task[] {
+    return this.editItem;
   }
 }

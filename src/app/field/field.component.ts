@@ -15,6 +15,7 @@ export class FieldComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
+
   constructor(private router: Router, private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute, private tasksService: TasksService) { }
 
   ngOnInit(): void {
@@ -36,3 +37,4 @@ export class FieldComponent implements OnInit {
     this.router.navigateByUrl('/list', {}); // navigation to list component
   }
 }
+

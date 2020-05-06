@@ -1,1 +1,7 @@
-<p>edit works!</p>
+<h5>Here you can edit your task:</h5>
+
+<input type="text" *ngFor="let editItem  of oneField" placeholder="{{editItem.action}}">
+<br><br>
+<input type="text" *ngFor="let editItem  of oneField" placeholder="{{editItem.comment}}">
+
+<button (click)='saveTask(editItem)' class="btn btn-dark btn-sm">Save task</button>
