@@ -19,7 +19,7 @@ export class FieldComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute, private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.task = { action: '', comment: '' };
+    this.task = { action: '', comment: '', id: '' };
     this.registerForm = this.formBuilder.group({
       action: ['', Validators.required],
       comment: ['', Validators.required]
@@ -33,7 +33,7 @@ export class FieldComponent implements OnInit {
     if (this.registerForm.invalid) {
       return; // co tu oznacza samo return?
     }
-    this.tasksService.writeOnTheList(this.task.action, this.task.comment);
+    this.tasksService.writeOnTheList(this.task.action, this.task.comment, this.task.id);
     this.router.navigateByUrl('/list', {}); // navigation to list component
   }
 }

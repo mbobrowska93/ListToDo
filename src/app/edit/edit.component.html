@@ -1,7 +1,9 @@
 <h5>Here you can edit your task:</h5>
 
-<input type="text" *ngFor="let editItem  of oneField" placeholder="{{editItem.action}}">
+<input type="text" value="{{oneField.action}}" [(ngModel)]="newField.action"> 
+<!--Wywala error "TypeError: Cannot read property 'action' of undefined" odnosnie oneField.action-->
 <br><br>
-<input type="text" *ngFor="let editItem  of oneField" placeholder="{{editItem.comment}}">
-
-<button (click)='saveTask(editItem)' class="btn btn-dark btn-sm">Save task</button>
+<input type="text" value="{{oneField.comment}}" [(ngModel)]="newField.comment">
+<!--Nie wczytuje mi oneField.comment-->
+<br><br>
+<button (click)='updateTask(newField)' class="btn btn-dark btn-sm">Update task</button> 
