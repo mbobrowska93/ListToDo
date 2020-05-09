@@ -15,7 +15,7 @@ export class TasksService {
   writeOnTheList(e: string, f: string, i: string) {
     // dostajemy zadanie i komentarz w postaci stringow, i w tej metodce musimy do niej stworyc obiekt i mu te parametry dac
     console.log(e, f);
-    const newItem: Task = new Task(e, f, i); // przekazanie nazwy dla obiektu Task
+    const newItem: Task = new Task(e, f, i); // przekazanie nazwy dla nowego obiektu Task
     this.item.push(newItem);
   }
 
@@ -37,14 +37,14 @@ export class TasksService {
   }
 
   compare(updatedItem: Task) {
-
-    // pobranie obiektu z tablicy po jego id, ktorepowinno byc takie same jak tego updatedItem
-    let updateItem = this.item.find(this.findIndexToUpdate, updatedItem.id);
-    let index = this.item.indexOf(updateItem);
+    // pobranie obiektu z tablicy po jego id, ktore powinno byc takie same jak tego updatedItem
+    const updateItem = this.item.find(this.findIndexToUpdate);
+    const index = this.item.indexOf(updateItem);
     this.item[index] = updatedItem;
+    // zmienia mi zawsze pozycje pierwsza i ta ktora chce edytowac *********************
   }
   findIndexToUpdate(updatedItem) {
-    // przyrownanie id 
+    // przyrownanie id
     return updatedItem.id === this;
   }
 

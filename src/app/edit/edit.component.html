@@ -1,9 +1,9 @@
 <h5>Here you can edit your task:</h5>
 
-<input type="text" value="{{oneField.action}}" [(ngModel)]="newField.action"> 
+<input type="text" [(ngModel)]="newField.action"> 
 <!--Wywala error "TypeError: Cannot read property 'action' of undefined" odnosnie oneField.action-->
 <br><br>
-<input type="text" value="{{oneField.comment}}" [(ngModel)]="newField.comment">
+<input type="text" [(ngModel)]="newField.comment">
 <!--Nie wczytuje mi oneField.comment-->
 <br><br>
-<button (click)='updateTask(newField)' class="btn btn-dark btn-sm">Update task</button> 
+<button (click)='updateTask()' class="btn btn-dark btn-sm">Update task</button> 

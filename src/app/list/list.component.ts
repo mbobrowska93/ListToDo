@@ -25,5 +25,6 @@ export class ListComponent implements OnInit {
 
   editTask(positions: Task) {
     this.tasksService.edit(positions);
+    this.router.navigateByUrl('/edit', {});
   }
 }

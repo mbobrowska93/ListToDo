@@ -10,16 +10,17 @@ import { Task } from '../task';
 })
 export class EditComponent implements OnInit {
 
-  oneField: Task;
+  
   public newField: Task;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.oneField = this.tasksService.getEditItem();
+    this.newField = this.tasksService.getEditItem();
   }
 
-  updateTask(updatedItem: Task) {
-   this.tasksService.compare(updatedItem);
+  updateTask() {
+   this.tasksService.compare(this.newField);
+   this.router.navigateByUrl('/list', {});
   }
 }
